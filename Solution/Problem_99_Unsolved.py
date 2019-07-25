@@ -6,8 +6,10 @@ Created on Mon Jul 22 23:28:06 2019
 """
 import numpy as np
 import pandas as pd
+from os.path import abspath, dirname
 #%%
-with open("D:\OneDrive\Education\Self learning\Coding\Project Euler\data\Problem 99\p099_base_exp.txt", "r") as fin:
+parent_dir=dirname(dirname(abspath(__file__)))
+with open(parent_dir+"\data\Problem 99\p099_base_exp.txt", "r") as fin:
     lines=[line.strip("\n").split(",") for line in fin.readlines()]
     A=np.array(lines,dtype=float)
 df=pd.DataFrame(A)
